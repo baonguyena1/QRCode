@@ -86,6 +86,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DC458A1D2137A3FB00094C4B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				DCA69B032137A15C00A35DCD /* Info.plist */,
+				DCA69AFB2137A15A00A35DCD /* Main.storyboard */,
+				DCA69B002137A15C00A35DCD /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		DCA69AEB2137A15A00A35DCD = {
 			isa = PBXGroup;
 			children = (
@@ -109,12 +119,10 @@
 		DCA69AF62137A15A00A35DCD /* QRCode */ = {
 			isa = PBXGroup;
 			children = (
+				DC458A1D2137A3FB00094C4B /* Resource */,
 				DCA69AF72137A15A00A35DCD /* AppDelegate.swift */,
 				DCA69AF92137A15A00A35DCD /* ViewController.swift */,
-				DCA69AFB2137A15A00A35DCD /* Main.storyboard */,
 				DCA69AFE2137A15C00A35DCD /* Assets.xcassets */,
-				DCA69B002137A15C00A35DCD /* LaunchScreen.storyboard */,
-				DCA69B032137A15C00A35DCD /* Info.plist */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -235,6 +243,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-QRCode/Pods-QRCode-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -242,6 +251,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -389,7 +399,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -443,7 +453,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -459,7 +469,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4X4ZDEX56P;
-				INFOPLIST_FILE = QRCode/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/QRCode/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -478,7 +488,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4X4ZDEX56P;
-				INFOPLIST_FILE = QRCode/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/QRCode/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
