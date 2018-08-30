@@ -8,7 +8,7 @@ target 'QRCode' do
   # Pods for QRCode
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'RealmSwift'
+  pod 'RxRealm'
   pod 'SwiftLint'
   pod 'RAMAnimatedTabBarController'
 

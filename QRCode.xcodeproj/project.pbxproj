@@ -9,12 +9,21 @@
 /* Begin PBXBuildFile section */
 		03420395B5DA674B4D5AC4D3 /* Pods_QRCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A170B917F1CFFA6E9AEDC079 /* Pods_QRCode.framework */; };
 		18D6E35CA91D0D4C81EE3135 /* Pods_QRCodeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6179027C0280B88CCE0F7BF /* Pods_QRCodeTests.framework */; };
+		DC080D362137CA030080B4A5 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC080D352137CA030080B4A5 /* HistoryViewModel.swift */; };
+		DC080D392137CDFD0080B4A5 /* UIView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC080D382137CDFD0080B4A5 /* UIView+Helper.swift */; };
+		DC080D3B2137CE020080B4A5 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC080D3A2137CE020080B4A5 /* Storyboarded.swift */; };
+		DC080D3E2137D0380080B4A5 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC080D3D2137D0380080B4A5 /* HistoryCell.swift */; };
+		DC080D412137D05F0080B4A5 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC080D402137D05F0080B4A5 /* Protocol.swift */; };
+		DC884E6B2137C6DA00D25CDE /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC884E6A2137C6DA00D25CDE /* HistoryViewController.swift */; };
 		DCA69AF82137A15A00A35DCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA69AF72137A15A00A35DCD /* AppDelegate.swift */; };
-		DCA69AFA2137A15A00A35DCD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA69AF92137A15A00A35DCD /* ViewController.swift */; };
 		DCA69AFD2137A15A00A35DCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA69AFB2137A15A00A35DCD /* Main.storyboard */; };
 		DCA69AFF2137A15C00A35DCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCA69AFE2137A15C00A35DCD /* Assets.xcassets */; };
 		DCA69B022137A15C00A35DCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA69B002137A15C00A35DCD /* LaunchScreen.storyboard */; };
 		DCA69B0D2137A15C00A35DCD /* QRCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA69B0C2137A15C00A35DCD /* QRCodeTests.swift */; };
+		DCD299792137E7F8001F31CC /* UITableView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD299782137E7F8001F31CC /* UITableView+Helper.swift */; };
+		DCD2997B2137EAB2001F31CC /* Date+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2997A2137EAB2001F31CC /* Date+helper.swift */; };
+		DCECCEF12137D467004C3345 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECCEF02137D467004C3345 /* History.swift */; };
+		DCECCEF32137D5BB004C3345 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECCEF22137D5BB004C3345 /* RealmManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,9 +42,14 @@
 		4DC425063886CA0AA10F9CF2 /* Pods-QRCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRCode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QRCode/Pods-QRCode.debug.xcconfig"; sourceTree = "<group>"; };
 		7E76846BCF770D9EE274E2CA /* Pods-QRCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRCode.release.xcconfig"; path = "Pods/Target Support Files/Pods-QRCode/Pods-QRCode.release.xcconfig"; sourceTree = "<group>"; };
 		A170B917F1CFFA6E9AEDC079 /* Pods_QRCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QRCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC080D352137CA030080B4A5 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		DC080D382137CDFD0080B4A5 /* UIView+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Helper.swift"; sourceTree = "<group>"; };
+		DC080D3A2137CE020080B4A5 /* Storyboarded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		DC080D3D2137D0380080B4A5 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		DC080D402137D05F0080B4A5 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		DC884E6A2137C6DA00D25CDE /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		DCA69AF42137A15A00A35DCD /* QRCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA69AF72137A15A00A35DCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DCA69AF92137A15A00A35DCD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DCA69AFC2137A15A00A35DCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCA69AFE2137A15C00A35DCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCA69B012137A15C00A35DCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -43,6 +57,10 @@
 		DCA69B082137A15C00A35DCD /* QRCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QRCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA69B0C2137A15C00A35DCD /* QRCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeTests.swift; sourceTree = "<group>"; };
 		DCA69B0E2137A15C00A35DCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCD299782137E7F8001F31CC /* UITableView+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Helper.swift"; sourceTree = "<group>"; };
+		DCD2997A2137EAB2001F31CC /* Date+helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+helper.swift"; sourceTree = "<group>"; };
+		DCECCEF02137D467004C3345 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		DCECCEF22137D5BB004C3345 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		F6179027C0280B88CCE0F7BF /* Pods_QRCodeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QRCodeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -86,14 +104,75 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DC080D372137CDD80080B4A5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DCD299782137E7F8001F31CC /* UITableView+Helper.swift */,
+				DC080D3A2137CE020080B4A5 /* Storyboarded.swift */,
+				DC080D382137CDFD0080B4A5 /* UIView+Helper.swift */,
+				DCD2997A2137EAB2001F31CC /* Date+helper.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		DC080D3C2137D01C0080B4A5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DC080D3D2137D0380080B4A5 /* HistoryCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		DC080D3F2137D0460080B4A5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DC080D402137D05F0080B4A5 /* Protocol.swift */,
+				DCECCEF22137D5BB004C3345 /* RealmManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		DC458A1D2137A3FB00094C4B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				DCA69AFE2137A15C00A35DCD /* Assets.xcassets */,
 				DCA69B032137A15C00A35DCD /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		DC884E692137AE4C00D25CDE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DC884E6A2137C6DA00D25CDE /* HistoryViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DC884E6C2137C78A00D25CDE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DC080D352137CA030080B4A5 /* HistoryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DC884E6D2137C79500D25CDE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DCECCEF02137D467004C3345 /* History.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DC884E6E2137C7A200D25CDE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DC080D3C2137D01C0080B4A5 /* Cell */,
 				DCA69AFB2137A15A00A35DCD /* Main.storyboard */,
 				DCA69B002137A15C00A35DCD /* LaunchScreen.storyboard */,
 			);
-			path = Resource;
+			path = View;
 			sourceTree = "<group>";
 		};
 		DCA69AEB2137A15A00A35DCD = {
@@ -119,10 +198,14 @@
 		DCA69AF62137A15A00A35DCD /* QRCode */ = {
 			isa = PBXGroup;
 			children = (
+				DC080D3F2137D0460080B4A5 /* Utilities */,
+				DC080D372137CDD80080B4A5 /* Extension */,
+				DC884E6D2137C79500D25CDE /* Model */,
+				DC884E6C2137C78A00D25CDE /* ViewModel */,
+				DC884E692137AE4C00D25CDE /* Controller */,
+				DC884E6E2137C7A200D25CDE /* View */,
 				DC458A1D2137A3FB00094C4B /* Resource */,
 				DCA69AF72137A15A00A35DCD /* AppDelegate.swift */,
-				DCA69AF92137A15A00A35DCD /* ViewController.swift */,
-				DCA69AFE2137A15C00A35DCD /* Assets.xcassets */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -247,6 +330,7 @@
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -255,6 +339,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,8 +390,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCA69AFA2137A15A00A35DCD /* ViewController.swift in Sources */,
+				DC080D3E2137D0380080B4A5 /* HistoryCell.swift in Sources */,
 				DCA69AF82137A15A00A35DCD /* AppDelegate.swift in Sources */,
+				DCECCEF12137D467004C3345 /* History.swift in Sources */,
+				DC080D362137CA030080B4A5 /* HistoryViewModel.swift in Sources */,
+				DC080D412137D05F0080B4A5 /* Protocol.swift in Sources */,
+				DCECCEF32137D5BB004C3345 /* RealmManager.swift in Sources */,
+				DC080D3B2137CE020080B4A5 /* Storyboarded.swift in Sources */,
+				DCD299792137E7F8001F31CC /* UITableView+Helper.swift in Sources */,
+				DCD2997B2137EAB2001F31CC /* Date+helper.swift in Sources */,
+				DC080D392137CDFD0080B4A5 /* UIView+Helper.swift in Sources */,
+				DC884E6B2137C6DA00D25CDE /* HistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
