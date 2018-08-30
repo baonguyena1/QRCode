@@ -11,6 +11,7 @@ target 'QRCode' do
   pod 'RxRealm'
   pod 'SwiftLint'
   pod 'RAMAnimatedTabBarController'
+  pod 'SwipeCellKit'
 
   target 'QRCodeTests' do
     inherit! :search_paths

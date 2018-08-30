@@ -12,6 +12,7 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.2.0)
   - SwiftLint (0.27.0)
+  - SwipeCellKit (2.4.3)
 
 DEPENDENCIES:
   - RAMAnimatedTabBarController
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - RxRealm
   - RxSwift
   - SwiftLint
+  - SwipeCellKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -29,6 +31,7 @@ SPEC REPOS:
     - RxRealm
     - RxSwift
     - SwiftLint
+    - SwipeCellKit
 
 SPEC CHECKSUMS:
   RAMAnimatedTabBarController: 7e259e89b669c7bc833a6441c7d8fbfd6580f473
@@ -38,7 +41,8 @@ SPEC CHECKSUMS:
   RxRealm: a6c6c0a07cb61f34209969ca6657734edfdfff30
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
+  SwipeCellKit: cee9906e6d3a36e22ad1a852fba7f8fa0839d113
 
-PODFILE CHECKSUM: 74c7d581d35274ed243b7a41c879263b898f1f2b
+PODFILE CHECKSUM: 1034da589edde6e7aad83cab074f6031f977d9d1
 
 COCOAPODS: 1.5.3

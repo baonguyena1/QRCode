@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RealmSwift
+import SwipeCellKit
 
 class HistoryViewController: UIViewController {
     
@@ -86,10 +87,45 @@ extension HistoryViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: HistoryCell.identifier, for: indexPath) as! HistoryCell
         let history = self.histories[indexPath.row]
         cell.history = history
+        cell.delegate = self
         return cell
     }
 }
 
 extension HistoryViewController: UITableViewDelegate {
     
+}
+
+extension HistoryViewController: SwipeTableViewCellDelegate {
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+        let delete = SwipeAction(style: .destructive, title: nil) { action, indexPath in
+            let history = self.histories[indexPath.row]
+            try? RealmManager.realm.write {
+                RealmManager.realm.delete(history)
+            }
+        }
+        self.configure(action: delete)
+        return [delete]
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = .destructive
+        options.transitionStyle = .reveal
+        options.buttonSpacing = 4
+        options.backgroundColor = #colorLiteral(red: 0.9467939734, green: 0.9468161464, blue: 0.9468042254, alpha: 1)
+        
+        return options
+    }
+    
+    fileprivate func configure(action: SwipeAction) {
+        action.title = "Trash"
+        action.image = #imageLiteral(resourceName: "trash-circle")
+        action.backgroundColor = .clear
+        action.textColor = #colorLiteral(red: 1, green: 0.2352941176, blue: 0.1882352941, alpha: 1)
+        action.font = .systemFont(ofSize: 13)
+        action.transitionDelegate = ScaleTransition.default
+    }
 }
