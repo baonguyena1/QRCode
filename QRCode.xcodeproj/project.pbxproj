@@ -19,6 +19,7 @@
 		DC15CD6221393BB1001E8043 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC15CD6121393BB0001E8043 /* Logger.swift */; };
 		DC15CD6421393F6F001E8043 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC15CD6321393F6F001E8043 /* ViewController.swift */; };
 		DC2AE7E521391E5D00812224 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AE7E421391E5D00812224 /* Constant.swift */; };
+		DC6310EE2139500F0062BCFA /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6310ED2139500F0062BCFA /* MainTabBarViewController.swift */; };
 		DC884E6B2137C6DA00D25CDE /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC884E6A2137C6DA00D25CDE /* HistoryViewController.swift */; };
 		DCA69AF82137A15A00A35DCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA69AF72137A15A00A35DCD /* AppDelegate.swift */; };
 		DCA69AFD2137A15A00A35DCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA69AFB2137A15A00A35DCD /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 		DC15CD6321393F6F001E8043 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DC2AE7E421391E5D00812224 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		DC2AE7E621391EEA00812224 /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DZNEmptyDataSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC6310ED2139500F0062BCFA /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		DC884E6A2137C6DA00D25CDE /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		DCA69AF42137A15A00A35DCD /* QRCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA69AF72137A15A00A35DCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				DC884E6A2137C6DA00D25CDE /* HistoryViewController.swift */,
 				DCD32C282137FEAF00BDA200 /* HistoryDetailViewController.swift */,
 				DC15CD6321393F6F001E8043 /* ViewController.swift */,
+				DC6310ED2139500F0062BCFA /* MainTabBarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				DC15CD6221393BB1001E8043 /* Logger.swift in Sources */,
 				DC2AE7E521391E5D00812224 /* Constant.swift in Sources */,
 				DCD299792137E7F8001F31CC /* UITableView+Helper.swift in Sources */,
+				DC6310EE2139500F0062BCFA /* MainTabBarViewController.swift in Sources */,
 				DCD32C292137FEAF00BDA200 /* HistoryDetailViewController.swift in Sources */,
 				DC15CD6421393F6F001E8043 /* ViewController.swift in Sources */,
 				DCD2997B2137EAB2001F31CC /* Date+helper.swift in Sources */,
