@@ -22,6 +22,8 @@
 		DCA69B0D2137A15C00A35DCD /* QRCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA69B0C2137A15C00A35DCD /* QRCodeTests.swift */; };
 		DCD299792137E7F8001F31CC /* UITableView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD299782137E7F8001F31CC /* UITableView+Helper.swift */; };
 		DCD2997B2137EAB2001F31CC /* Date+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2997A2137EAB2001F31CC /* Date+helper.swift */; };
+		DCD32C292137FEAF00BDA200 /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD32C282137FEAF00BDA200 /* HistoryDetailViewController.swift */; };
+		DCD32C2B213803C600BDA200 /* HistoryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD32C2A213803C600BDA200 /* HistoryDetailViewModel.swift */; };
 		DCECCEF12137D467004C3345 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECCEF02137D467004C3345 /* History.swift */; };
 		DCECCEF32137D5BB004C3345 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECCEF22137D5BB004C3345 /* RealmManager.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +61,8 @@
 		DCA69B0E2137A15C00A35DCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCD299782137E7F8001F31CC /* UITableView+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Helper.swift"; sourceTree = "<group>"; };
 		DCD2997A2137EAB2001F31CC /* Date+helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+helper.swift"; sourceTree = "<group>"; };
+		DCD32C282137FEAF00BDA200 /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
+		DCD32C2A213803C600BDA200 /* HistoryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewModel.swift; sourceTree = "<group>"; };
 		DCECCEF02137D467004C3345 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		DCECCEF22137D5BB004C3345 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		F6179027C0280B88CCE0F7BF /* Pods_QRCodeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QRCodeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				DC884E6A2137C6DA00D25CDE /* HistoryViewController.swift */,
+				DCD32C282137FEAF00BDA200 /* HistoryDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				DC080D352137CA030080B4A5 /* HistoryViewModel.swift */,
+				DCD32C2A213803C600BDA200 /* HistoryDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -327,23 +333,25 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-QRCode/Pods-QRCode-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -379,7 +387,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "";
 		};
 		F3A800E6D0A1BC914EA0128A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -414,9 +422,11 @@
 				DCECCEF32137D5BB004C3345 /* RealmManager.swift in Sources */,
 				DC080D3B2137CE020080B4A5 /* Storyboarded.swift in Sources */,
 				DCD299792137E7F8001F31CC /* UITableView+Helper.swift in Sources */,
+				DCD32C292137FEAF00BDA200 /* HistoryDetailViewController.swift in Sources */,
 				DCD2997B2137EAB2001F31CC /* Date+helper.swift in Sources */,
 				DC080D392137CDFD0080B4A5 /* UIView+Helper.swift in Sources */,
 				DC884E6B2137C6DA00D25CDE /* HistoryViewController.swift in Sources */,
+				DCD32C2B213803C600BDA200 /* HistoryDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 PODS:
-  - RAMAnimatedTabBarController (3.5.0)
+  - Hero (1.3.0)
   - Realm (3.7.5):
     - Realm/Headers (= 3.7.5)
   - Realm/Headers (3.7.5)
@@ -11,38 +11,38 @@ PODS:
     - RealmSwift (~> 3.0)
     - RxSwift (~> 4.0)
   - RxSwift (4.2.0)
-  - SwiftLint (0.27.0)
   - SwipeCellKit (2.4.3)
+  - Toast-Swift (3.0.1)
 
 DEPENDENCIES:
-  - RAMAnimatedTabBarController
+  - Hero
   - RxCocoa
   - RxRealm
   - RxSwift
-  - SwiftLint
   - SwipeCellKit
+  - Toast-Swift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - RAMAnimatedTabBarController
+    - Hero
     - Realm
     - RealmSwift
     - RxCocoa
     - RxRealm
     - RxSwift
-    - SwiftLint
     - SwipeCellKit
+    - Toast-Swift
 
 SPEC CHECKSUMS:
-  RAMAnimatedTabBarController: 7e259e89b669c7bc833a6441c7d8fbfd6580f473
+  Hero: 3eecd3fd62dd2425cbc7e35505c557b86d5a379e
   Realm: c286caf4dbf346ce24aad49ca76c7ce622d4a082
   RealmSwift: 2a9281e37d6de55f66f76254d49d28aeb1b729e4
   RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
   RxRealm: a6c6c0a07cb61f34209969ca6657734edfdfff30
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
-  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   SwipeCellKit: cee9906e6d3a36e22ad1a852fba7f8fa0839d113
+  Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
 
-PODFILE CHECKSUM: 1034da589edde6e7aad83cab074f6031f977d9d1
+PODFILE CHECKSUM: eeea3742a96bd7918bcc74577ae7e97f5bab0717
 
 COCOAPODS: 1.5.3

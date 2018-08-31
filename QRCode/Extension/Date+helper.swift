@@ -11,7 +11,7 @@ import UIKit
 extension Date {
     var toString: String {
         let formater = DateFormatter()
-        formater.dateFormat = "yyyy/MM/dd HH:mm:ss"
+        formater.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return formater.string(from: self)
     }
 }

@@ -12,20 +12,20 @@ import RxCocoa
 import RealmSwift
 import SwipeCellKit
 
-class HistoryViewController: UIViewController {
+class HistoryViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak fileprivate var tableView: UITableView!
     @IBOutlet weak var addItemButton: UIBarButtonItem!
     
     fileprivate var historyViewModel: HistoryViewModel!
     fileprivate let bag = DisposeBag()
-    fileprivate var histories: Results<History>!
+    fileprivate lazy var histories = HistoryViewModel.histories
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.setupRx()
         self.setupTableView()
+        self.setupRx()
     }
     
     private func setupTableView() {
@@ -36,7 +36,6 @@ class HistoryViewController: UIViewController {
     
     fileprivate func setupRx() {
         self.historyViewModel = HistoryViewModel()
-        self.histories = self.historyViewModel.histories
         
         self.historyViewModel.getHistories()
             .subscribe(onNext: { [unowned self] (results, changes) in
@@ -70,6 +69,17 @@ class HistoryViewController: UIViewController {
                     RealmManager.realm.add(history)
                 }
             }
+            .disposed(by: bag)
+        
+        self.tableView
+            .rx.itemSelected
+            .subscribe(onNext: { [unowned self] indexPath in
+                
+                let historyDetailController = HistoryDetailViewController.instantiate()
+                historyDetailController.history = self.histories[indexPath.row]
+                self.navigationController?.pushViewController(historyDetailController, animated: true)
+                self.tableView.deselectRow(at: indexPath, animated: true)
+            })
             .disposed(by: bag)
     }
 
@@ -127,5 +137,6 @@ extension HistoryViewController: SwipeTableViewCellDelegate {
         action.textColor = #colorLiteral(red: 1, green: 0.2352941176, blue: 0.1882352941, alpha: 1)
         action.font = .systemFont(ofSize: 13)
         action.transitionDelegate = ScaleTransition.default
+        action.fulfill(with: .delete)
     }
 }
