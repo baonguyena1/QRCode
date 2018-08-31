@@ -1,5 +1,6 @@
 PODS:
   - DZNEmptyDataSet (1.8.1)
+  - Google-Mobile-Ads-SDK (7.32.0)
   - Hero (1.3.0)
   - Realm (3.7.5):
     - Realm/Headers (= 3.7.5)
@@ -16,6 +17,7 @@ PODS:
 
 DEPENDENCIES:
   - DZNEmptyDataSet
+  - Google-Mobile-Ads-SDK
   - Hero
   - RxCocoa
   - RxRealm
@@ -25,6 +27,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - DZNEmptyDataSet
+    - Google-Mobile-Ads-SDK
     - Hero
     - Realm
     - RealmSwift
@@ -35,6 +38,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  Google-Mobile-Ads-SDK: 2aca87e46e860f1e1fc0fdc1201dd9caa4be9ba6
   Hero: 3eecd3fd62dd2425cbc7e35505c557b86d5a379e
   Realm: c286caf4dbf346ce24aad49ca76c7ce622d4a082
   RealmSwift: 2a9281e37d6de55f66f76254d49d28aeb1b729e4
@@ -43,6 +47,6 @@ SPEC CHECKSUMS:
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
   Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
 
-PODFILE CHECKSUM: f722ee03ee432194afba6f701752343f2106ebd5
+PODFILE CHECKSUM: a745b535b88c7e65710443336a31110b0caf406d
 
 COCOAPODS: 1.5.3

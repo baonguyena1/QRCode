@@ -15,6 +15,7 @@ target 'QRCode' do
   pod 'Hero'
   pod 'Toast-Swift'
   pod 'DZNEmptyDataSet'
+  pod 'Google-Mobile-Ads-SDK'
 
   target 'QRCodeTests' do
     inherit! :search_paths

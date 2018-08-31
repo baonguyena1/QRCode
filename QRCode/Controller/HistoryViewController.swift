@@ -11,11 +11,13 @@ import RxSwift
 import RxCocoa
 import RealmSwift
 import DZNEmptyDataSet
+import GoogleMobileAds
 
 class HistoryViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak fileprivate var tableView: UITableView!
     @IBOutlet weak var addItemButton: UIBarButtonItem!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     fileprivate var historyViewModel: HistoryViewModel!
     fileprivate let bag = DisposeBag()
@@ -24,6 +26,7 @@ class HistoryViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.setupAds()
         self.setupTableView()
         self.setupRx()
     }
@@ -85,7 +88,13 @@ class HistoryViewController: UIViewController, Storyboarded {
             .disposed(by: bag)
     }
 
-    // MARK: - Actions
+    fileprivate func setupAds() {
+        bannerView.adUnitID = Constant.gadMobileAppID
+        bannerView.rootViewController = self
+        let request = GADRequest()
+        request.testDevices = [kGADSimulatorID]
+        bannerView.load(request)
+    }
     
 }
 

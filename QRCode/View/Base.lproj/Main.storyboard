@@ -15,7 +15,7 @@
         <!--View Controller-->
         <scene sceneID="7qF-gi-aDn">
             <objects>
-                <viewController id="xwf-H8-e0y" sceneMemberID="viewController">
+                <viewController id="xwf-H8-e0y" customClass="ViewController" customModule="QRCode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NSh-tO-vLu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,7 +97,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pIn-zp-HdM">
-                                <rect key="frame" x="0.0" y="140" width="375" height="589"/>
+                                <rect key="frame" x="0.0" y="140" width="375" height="539"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyCell" rowHeight="109" id="qSf-Kx-zIZ" customClass="HistoryCell" customModule="QRCode" customModuleProvider="target">
@@ -155,13 +155,27 @@
                                     <outlet property="delegate" destination="Irv-st-Pjk" id="S4D-aS-ZiR"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFo-G7-fCH" customClass="GADBannerView">
+                                <rect key="frame" x="27.666666666666657" y="679" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="kb2-6G-nCQ"/>
+                                    <constraint firstAttribute="width" constant="320" id="swp-Lj-LIK"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autoloadEnabled" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="pIn-zp-HdM" firstAttribute="top" secondItem="dpR-E5-kYN" secondAttribute="top" id="5t8-By-Uar"/>
+                            <constraint firstItem="pIn-zp-HdM" firstAttribute="top" secondItem="dpR-E5-kYN" secondAttribute="top" id="1H3-cN-gSt"/>
+                            <constraint firstItem="lFo-G7-fCH" firstAttribute="centerX" secondItem="35s-iu-R23" secondAttribute="centerX" id="Ebm-IH-rDU"/>
                             <constraint firstItem="dpR-E5-kYN" firstAttribute="trailing" secondItem="pIn-zp-HdM" secondAttribute="trailing" id="FSS-Sx-5ng"/>
-                            <constraint firstItem="dpR-E5-kYN" firstAttribute="bottom" secondItem="pIn-zp-HdM" secondAttribute="bottom" id="Spm-bH-ZS5"/>
+                            <constraint firstItem="lFo-G7-fCH" firstAttribute="top" secondItem="pIn-zp-HdM" secondAttribute="bottom" id="UXL-Aq-G8d"/>
+                            <constraint firstItem="lFo-G7-fCH" firstAttribute="bottom" secondItem="dpR-E5-kYN" secondAttribute="bottom" id="Vs2-SJ-N54"/>
                             <constraint firstItem="pIn-zp-HdM" firstAttribute="leading" secondItem="dpR-E5-kYN" secondAttribute="leading" id="fVS-Rb-mh2"/>
+                            <constraint firstItem="lFo-G7-fCH" firstAttribute="centerX" secondItem="35s-iu-R23" secondAttribute="centerX" id="n7S-mC-3tW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dpR-E5-kYN"/>
                     </view>
@@ -172,6 +186,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addItemButton" destination="eDi-CM-mTi" id="v8N-ze-dZY"/>
+                        <outlet property="bannerView" destination="lFo-G7-fCH" id="BYp-nA-T0D"/>
                         <outlet property="tableView" destination="pIn-zp-HdM" id="YVM-PL-tXL"/>
                         <segue destination="8sw-Ut-j9D" kind="show" id="v7J-Vc-dxX"/>
                     </connections>

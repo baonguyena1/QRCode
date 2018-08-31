@@ -60,7 +60,8 @@ class HistoryDetailViewController: UIViewController, Storyboarded {
             .rx.tap
             .throttle(0.5, scheduler: MainScheduler.instance)
             .subscribe(onNext: { [unowned self] in
-                self.view.makeToast("Copied to clipboard", duration: 2.0, position: .center)
+                UIPasteboard.general.string = self.contentLabel.text
+                self.view.makeToast("Copied to clipboard", duration: 1.0, position: .center)
             })
             .disposed(by: bag)
     }
