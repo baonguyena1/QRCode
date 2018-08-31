@@ -16,6 +16,7 @@ target 'QRCode' do
   pod 'Toast-Swift'
   pod 'DZNEmptyDataSet'
   pod 'Google-Mobile-Ads-SDK'
+  pod 'SwiftQRScanner', :git => ‘https://github.com/vinodiOS/SwiftQRScanner’
 
   target 'QRCodeTests' do
     inherit! :search_paths

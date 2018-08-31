@@ -13,6 +13,7 @@ PODS:
     - RealmSwift (~> 3.0)
     - RxSwift (~> 4.0)
   - RxSwift (4.2.0)
+  - SwiftQRScanner (0.1.4)
   - Toast-Swift (3.0.1)
 
 DEPENDENCIES:
@@ -22,6 +23,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxRealm
   - RxSwift
+  - SwiftQRScanner (from `https://github.com/vinodiOS/SwiftQRScanner`)
   - Toast-Swift
 
 SPEC REPOS:
@@ -36,6 +38,15 @@ SPEC REPOS:
     - RxSwift
     - Toast-Swift
 
+EXTERNAL SOURCES:
+  SwiftQRScanner:
+    :git: https://github.com/vinodiOS/SwiftQRScanner
+
+CHECKOUT OPTIONS:
+  SwiftQRScanner:
+    :commit: 4d5959dfe31ecbe3d3b16751b6dd8e5899d2d799
+    :git: https://github.com/vinodiOS/SwiftQRScanner
+
 SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Google-Mobile-Ads-SDK: 2aca87e46e860f1e1fc0fdc1201dd9caa4be9ba6
@@ -45,8 +56,9 @@ SPEC CHECKSUMS:
   RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
   RxRealm: a6c6c0a07cb61f34209969ca6657734edfdfff30
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  SwiftQRScanner: 4e5fd0f29c7a8888998de191d10bb4d38a1ee34a
   Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
 
-PODFILE CHECKSUM: a745b535b88c7e65710443336a31110b0caf406d
+PODFILE CHECKSUM: 945a4eb50c53e29d62e22822963e179fc842dc0e
 
 COCOAPODS: 1.5.3
