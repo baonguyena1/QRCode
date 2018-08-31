@@ -11,9 +11,10 @@ target 'QRCode' do
   pod 'RxRealm'
 #  pod 'SwiftLint'
 #  pod 'RAMAnimatedTabBarController'
-  pod 'SwipeCellKit'
+#  pod 'SwipeCellKit'
   pod 'Hero'
   pod 'Toast-Swift'
+  pod 'DZNEmptyDataSet'
 
   target 'QRCodeTests' do
     inherit! :search_paths

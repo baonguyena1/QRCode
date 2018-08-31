@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RealmSwift
-import SwipeCellKit
+import DZNEmptyDataSet
 
 class HistoryViewController: UIViewController, Storyboarded {
     
@@ -31,6 +31,8 @@ class HistoryViewController: UIViewController, Storyboarded {
     private func setupTableView() {
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.emptyDataSetSource = self
+        self.tableView.emptyDataSetDelegate = self
         self.tableView.tableFooterView = UIView()
     }
     
@@ -97,46 +99,41 @@ extension HistoryViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: HistoryCell.identifier, for: indexPath) as! HistoryCell
         let history = self.histories[indexPath.row]
         cell.history = history
-        cell.delegate = self
         return cell
     }
+    
 }
 
 extension HistoryViewController: UITableViewDelegate {
     
-}
-
-extension HistoryViewController: SwipeTableViewCellDelegate {
-    
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
-        guard orientation == .right else { return nil }
-        let delete = SwipeAction(style: .destructive, title: nil) { action, indexPath in
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { [unowned self] (action, indexPath) in
             let history = self.histories[indexPath.row]
             try? RealmManager.realm.write {
                 RealmManager.realm.delete(history)
             }
         }
-        self.configure(action: delete)
         return [delete]
     }
-    
-    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
-        var options = SwipeOptions()
-        options.expansionStyle = .destructive
-        options.transitionStyle = .reveal
-        options.buttonSpacing = 4
-        options.backgroundColor = #colorLiteral(red: 0.9467939734, green: 0.9468161464, blue: 0.9468042254, alpha: 1)
-        
-        return options
+}
+
+extension HistoryViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        return #imageLiteral(resourceName: "placeholder_message")
     }
     
-    fileprivate func configure(action: SwipeAction) {
-        action.title = "Trash"
-        action.image = #imageLiteral(resourceName: "trash-circle")
-        action.backgroundColor = .clear
-        action.textColor = #colorLiteral(red: 1, green: 0.2352941176, blue: 0.1882352941, alpha: 1)
-        action.font = .systemFont(ofSize: 13)
-        action.transitionDelegate = ScaleTransition.default
-        action.fulfill(with: .delete)
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "When you have messages, you’ll see them here."
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineBreakMode = .byWordWrapping
+        paragraph.alignment = .center
+        paragraph.lineSpacing = 4.0
+        let attributed: [NSAttributedStringKey : Any] = [
+            NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17),
+            NSAttributedStringKey.foregroundColor: #colorLiteral(red: 0.8117647059, green: 0.8117647059, blue: 0.8117647059, alpha: 1),
+            NSAttributedStringKey.paragraphStyle: paragraph
+        ]
+        return NSAttributedString(string: text, attributes: attributed)
+
     }
 }

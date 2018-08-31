@@ -17,9 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         _ = RealmManager.shared
-//        try? RealmManager.realm.write {
-//            RealmManager.realm.deleteAll()
-//        }
+        try? RealmManager.realm.write {
+            RealmManager.realm.deleteAll()
+        }
         return true
     }
 
