@@ -12,6 +12,7 @@ class HistoryCell: UITableViewCell, Identifiable {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
     
     static var identifier: String {
         return "historyCell"
@@ -21,6 +22,7 @@ class HistoryCell: UITableViewCell, Identifiable {
         didSet {
             self.titleLabel.text = history.content
             self.subtitleLabel.text = history.createdDate.toString
+            self.iconImageView.image = history.contentType.image
         }
     }
 

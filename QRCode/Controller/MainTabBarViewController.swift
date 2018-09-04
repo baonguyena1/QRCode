@@ -49,18 +49,15 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
 
 extension MainTabBarViewController: QRScannerCodeDelegate {
     func qrScanner(_ controller: UIViewController, scanDidComplete result: String) {
-        print(result)
         self.createResult(result)
         self.selectedPreviousTab()
     }
     
     func qrScannerDidFail(_ controller: UIViewController, error: String) {
-        print(error)
         self.selectedPreviousTab()
     }
     
     func qrScannerDidCancel(_ controller: UIViewController) {
-        print("cancel")
         self.selectedPreviousTab()
     }
     

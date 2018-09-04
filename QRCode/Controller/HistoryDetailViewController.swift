@@ -10,12 +10,15 @@ import UIKit
 import RxCocoa
 import RxSwift
 import Toast_Swift
+import GoogleMobileAds
+import MessageUI
 
 class HistoryDetailViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var openURLButton: UIButton!
     @IBOutlet weak var copyButton: UIButton!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     fileprivate let bag = DisposeBag()
     fileprivate var historyDetailViewModel: HistoryDetailViewModel!
@@ -25,6 +28,7 @@ class HistoryDetailViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupRx()
+        setupAds()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,8 +55,20 @@ class HistoryDetailViewController: UIViewController, Storyboarded {
         openURLButton
             .rx.tap
             .throttle(0.5, scheduler: MainScheduler.instance)
-            .subscribe(onNext: {
+            .subscribe(onNext: { [unowned self] in
                 
+                let content = self.history.content
+                if let url = URL(string: content), UIApplication.shared.canOpenURL(url) {
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    } else {
+                        UIApplication.shared.openURL(url)
+                    }
+                } else if MFMailComposeViewController.canSendMail() {
+                    self.sendEmail(with: content)
+                } else if MFMessageComposeViewController.canSendText() {
+                    self.sendSMS(with: content)
+                }
             })
             .disposed(by: bag)
         
@@ -66,8 +82,47 @@ class HistoryDetailViewController: UIViewController, Storyboarded {
             .disposed(by: bag)
     }
     
+    fileprivate func setupAds() {
+        bannerView.adUnitID = Constant.gadMobileAppID
+        bannerView.rootViewController = self
+        let request = GADRequest()
+        request.testDevices = [kGADSimulatorID]
+        bannerView.load(request)
+    }
+    
     fileprivate func setupDisplay() {
         self.contentLabel.text = self.history.content
     }
 
+}
+
+extension HistoryDetailViewController: MFMailComposeViewControllerDelegate {
+    fileprivate func sendEmail(with content: String) {
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = self
+        composeVC.setToRecipients([content
+            ])
+        composeVC.setSubject("")
+        composeVC.setMessageBody("", isHTML: false)
+        self.present(composeVC, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension HistoryDetailViewController: MFMessageComposeViewControllerDelegate {
+    fileprivate func sendSMS(with content: String) {
+        let controller = MFMessageComposeViewController()
+        controller.subject = ""
+        controller.body = ""
+        controller.recipients = [content]
+        controller.messageComposeDelegate = self
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        controller.dismiss(animated: true, completion: nil)
+    }
 }
