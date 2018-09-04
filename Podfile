@@ -17,6 +17,7 @@ target 'QRCode' do
   pod 'Instabug'
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'Sparrow/LaunchAnimation’, :git => 'https://github.com/IvanVorobei/Sparrow.git’
 
   target 'QRCodeTests' do
     inherit! :search_paths

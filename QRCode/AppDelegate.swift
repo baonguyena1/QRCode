@@ -11,6 +11,7 @@ import GoogleMobileAds
 import Instabug
 import Fabric
 import Crashlytics
+import Sparrow
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GADMobileAds.configure(withApplicationID: Constant.gadMobileAppID)
         _ = RealmManager.shared
         _ = GADManager.shared
+        SPLaunchAnimation.asTwitter(onWindow: self.window!)
         return true
     }
 

@@ -17,6 +17,7 @@ PODS:
     - RealmSwift (~> 3.0)
     - RxSwift (~> 4.0)
   - RxSwift (4.2.0)
+  - Sparrow/LaunchAnimation (1.1.0)
   - SwiftQRScanner (0.1.4)
   - Toast-Swift (3.0.1)
 
@@ -30,6 +31,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxRealm
   - RxSwift
+  - Sparrow/LaunchAnimation (from `https://github.com/IvanVorobei/Sparrow.git`)
   - SwiftQRScanner (from `https://github.com/vinodiOS/SwiftQRScanner`)
   - Toast-Swift
 
@@ -49,10 +51,15 @@ SPEC REPOS:
     - Toast-Swift
 
 EXTERNAL SOURCES:
+  Sparrow:
+    :git: https://github.com/IvanVorobei/Sparrow.git
   SwiftQRScanner:
     :git: https://github.com/vinodiOS/SwiftQRScanner
 
 CHECKOUT OPTIONS:
+  Sparrow:
+    :commit: d3becbdd5dbc982a53a461188ea35b818342a9ed
+    :git: https://github.com/IvanVorobei/Sparrow.git
   SwiftQRScanner:
     :commit: 4d5959dfe31ecbe3d3b16751b6dd8e5899d2d799
     :git: https://github.com/vinodiOS/SwiftQRScanner
@@ -69,9 +76,10 @@ SPEC CHECKSUMS:
   RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
   RxRealm: a6c6c0a07cb61f34209969ca6657734edfdfff30
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  Sparrow: 86b8f0d7598dc52ff2b06bb1df05feb297d1821f
   SwiftQRScanner: 4e5fd0f29c7a8888998de191d10bb4d38a1ee34a
   Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
 
-PODFILE CHECKSUM: f808425cfb3eb67fead4776b7cd8a8272a902fea
+PODFILE CHECKSUM: e9692dc6dc2398bba5c144653746593cab2e2354
 
 COCOAPODS: 1.5.3
