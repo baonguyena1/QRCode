@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftQRScanner
+import AudioToolbox
 
 class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
@@ -49,6 +50,8 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
 
 extension MainTabBarViewController: QRScannerCodeDelegate {
     func qrScanner(_ controller: UIViewController, scanDidComplete result: String) {
+        self.playSound()
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         self.createResult(result)
         self.selectedPreviousTab()
     }
@@ -71,6 +74,13 @@ extension MainTabBarViewController: QRScannerCodeDelegate {
         try? RealmManager.realm.write {
             RealmManager.realm.add(history)
         }
+    }
+    
+    private func playSound() {
+        var soundID: SystemSoundID = 0
+        let strSoundFile = Bundle.main.path(forResource: "1801", ofType: "wav")
+        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: strSoundFile!) as CFURL, &soundID)
+        AudioServicesPlaySystemSound(soundID)
     }
     
 }

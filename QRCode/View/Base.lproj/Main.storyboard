@@ -107,20 +107,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_barcode_scanner" translatesAutoresizingMaskIntoConstraints="NO" id="MRT-Lv-ilv">
-                                                    <rect key="frame" x="16" y="21.666666666666664" width="65" height="65.333333333333343"/>
+                                                    <rect key="frame" x="15.999999999999996" y="34.333333333333336" width="39.666666666666657" height="40.000000000000007"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="AYo-l6-jtT"/>
                                                         <constraint firstAttribute="width" secondItem="MRT-Lv-ilv" secondAttribute="height" multiplier="1:1" id="jSe-hn-10Q"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8b-x0-eVa">
-                                                    <rect key="frame" x="97.333333333333343" y="15.999999999999998" width="261.66666666666663" height="20.333333333333329"/>
+                                                    <rect key="frame" x="72" y="15.999999999999998" width="287" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4E-Rx-ulj">
-                                                    <rect key="frame" x="97.333333333333343" y="46.333333333333336" width="261.66666666666663" height="18.000000000000007"/>
+                                                    <rect key="frame" x="72" y="46.333333333333336" width="287" height="18.000000000000007"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -170,9 +170,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gmt-pq-lsk"/>
                     </view>
-                    <navigationItem key="navigationItem" title="History" id="QOH-8V-jUW"/>
+                    <navigationItem key="navigationItem" title="History" id="QOH-8V-jUW">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="wmF-Ev-nHi"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="bannerView" destination="h1J-Yf-kZH" id="iQi-Ij-Fi6"/>
+                        <outlet property="editButton" destination="wmF-Ev-nHi" id="B08-ZD-dYp"/>
                         <outlet property="tableView" destination="0W8-ZV-Ipt" id="KnD-72-qS6"/>
                         <segue destination="8sw-Ut-j9D" kind="show" id="QGy-Yf-Zf4"/>
                     </connections>
@@ -205,7 +208,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJg-2i-dfy" customClass="GADBannerView">
-                                                        <rect key="frame" x="27.666666666666657" y="80.333333333333343" width="320" height="50"/>
+                                                        <rect key="frame" x="27.666666666666657" y="100.33333333333334" width="320" height="50"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="320" id="oyZ-rh-GYe"/>
@@ -282,10 +285,10 @@
                                                 <constraints>
                                                     <constraint firstItem="Gg9-zS-tf1" firstAttribute="leading" secondItem="suL-kL-Rlz" secondAttribute="leading" constant="16" id="1UE-DO-dLg"/>
                                                     <constraint firstItem="DVj-iL-gt4" firstAttribute="leading" secondItem="suL-kL-Rlz" secondAttribute="leading" id="62M-Ei-s6N"/>
-                                                    <constraint firstItem="PJg-2i-dfy" firstAttribute="top" secondItem="Gg9-zS-tf1" secondAttribute="bottom" constant="20" id="9LS-Ph-wut"/>
+                                                    <constraint firstItem="PJg-2i-dfy" firstAttribute="top" secondItem="Gg9-zS-tf1" secondAttribute="bottom" constant="40" id="9LS-Ph-wut"/>
                                                     <constraint firstAttribute="trailing" secondItem="DVj-iL-gt4" secondAttribute="trailing" id="Bx9-ye-4ck"/>
                                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="DVj-iL-gt4" secondAttribute="bottom" constant="40" id="QNz-VO-r0h"/>
-                                                    <constraint firstItem="DVj-iL-gt4" firstAttribute="top" secondItem="PJg-2i-dfy" secondAttribute="bottom" constant="40" id="XkY-9H-M3e"/>
+                                                    <constraint firstItem="DVj-iL-gt4" firstAttribute="top" secondItem="PJg-2i-dfy" secondAttribute="bottom" constant="20" id="XkY-9H-M3e"/>
                                                     <constraint firstAttribute="trailing" secondItem="Gg9-zS-tf1" secondAttribute="trailing" constant="16" id="s3o-oY-UZv"/>
                                                     <constraint firstItem="Gg9-zS-tf1" firstAttribute="top" secondItem="suL-kL-Rlz" secondAttribute="top" constant="40" id="vo7-F6-PCU"/>
                                                     <constraint firstItem="PJg-2i-dfy" firstAttribute="centerX" secondItem="suL-kL-Rlz" secondAttribute="centerX" id="xQN-Yg-okq"/>

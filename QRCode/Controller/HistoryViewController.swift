@@ -16,6 +16,7 @@ import GoogleMobileAds
 class HistoryViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak fileprivate var tableView: UITableView!
+    @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var bannerView: GADBannerView!
     
     fileprivate var historyViewModel: HistoryViewModel!
@@ -59,6 +60,21 @@ class HistoryViewController: UIViewController, Storyboarded {
                 historyDetailController.history = self.histories[indexPath.row]
                 self.navigationController?.pushViewController(historyDetailController, animated: true)
                 self.tableView.deselectRow(at: indexPath, animated: true)
+            })
+            .disposed(by: bag)
+        
+        self.editButton
+            .rx.tap
+            .throttle(0.5, scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] in
+                
+                if self.tableView.isEditing {
+                    self.tableView.setEditing(false, animated: true)
+                    self.editButton.title = "Edit"
+                } else {
+                    self.tableView.setEditing(true, animated: true)
+                    self.editButton.title = "Cancel"
+                }
             })
             .disposed(by: bag)
     }

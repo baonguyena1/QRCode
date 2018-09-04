@@ -19,6 +19,7 @@
 		DC15CD6221393BB1001E8043 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC15CD6121393BB0001E8043 /* Logger.swift */; };
 		DC15CD6421393F6F001E8043 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC15CD6321393F6F001E8043 /* ViewController.swift */; };
 		DC2AE7E521391E5D00812224 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AE7E421391E5D00812224 /* Constant.swift */; };
+		DC50F60A213E5FDD008D240E /* 1801.wav in Resources */ = {isa = PBXBuildFile; fileRef = DC50F609213E5FDD008D240E /* 1801.wav */; };
 		DC6310EE2139500F0062BCFA /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6310ED2139500F0062BCFA /* MainTabBarViewController.swift */; };
 		DC884E6B2137C6DA00D25CDE /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC884E6A2137C6DA00D25CDE /* HistoryViewController.swift */; };
 		DCA69AF82137A15A00A35DCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA69AF72137A15A00A35DCD /* AppDelegate.swift */; };
@@ -62,6 +63,7 @@
 		DC15CD6321393F6F001E8043 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DC2AE7E421391E5D00812224 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		DC2AE7E621391EEA00812224 /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DZNEmptyDataSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC50F609213E5FDD008D240E /* 1801.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1801.wav; sourceTree = "<group>"; };
 		DC6310ED2139500F0062BCFA /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		DC884E6A2137C6DA00D25CDE /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		DCA69AF42137A15A00A35DCD /* QRCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +162,7 @@
 		DC458A1D2137A3FB00094C4B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				DC50F609213E5FDD008D240E /* 1801.wav */,
 				DCA69AFE2137A15C00A35DCD /* Assets.xcassets */,
 				DCA69B032137A15C00A35DCD /* Info.plist */,
 			);
@@ -335,6 +338,7 @@
 			files = (
 				DCA69B022137A15C00A35DCD /* LaunchScreen.storyboard in Resources */,
 				DCA69AFF2137A15C00A35DCD /* Assets.xcassets in Resources */,
+				DC50F60A213E5FDD008D240E /* 1801.wav in Resources */,
 				DCA69AFD2137A15A00A35DCD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

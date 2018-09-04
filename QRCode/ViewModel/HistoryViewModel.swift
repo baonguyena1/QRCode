@@ -12,6 +12,8 @@ import RxSwift
 
 struct HistoryViewModel {
     
+    var editButtonSubject = PublishSubject<Void>()
+    
     static let histories = RealmManager.realm
         .objects(History.self)
         .sorted(byKeyPath: "createdDate", ascending: false)
@@ -19,4 +21,5 @@ struct HistoryViewModel {
     mutating func getHistories() -> Observable<(AnyRealmCollection<History>, RealmChangeset?)> {
         return Observable.changeset(from: HistoryViewModel.histories)
     }
+    
 }
