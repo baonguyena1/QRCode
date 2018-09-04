@@ -17,6 +17,7 @@ class GADManager: NSObject {
     
     override init() {
         super.init()
+        Logger.log("")
         self.interstitial = self.createAndLoadInterstitial()
         self.startTimer()
         // Pause game when application enters background.
@@ -41,8 +42,6 @@ class GADManager: NSObject {
     fileprivate func createAndLoadInterstitial() -> GADInterstitial {
         let interstitial = GADInterstitial(adUnitID: Constant.gadMobileAppID)
         let request = GADRequest()
-        // Request test ads on devices you specify. Your test device ID is printed to the console when
-        // an ad request is made.
         request.testDevices = [ kGADSimulatorID]
         interstitial.load(request)
         return interstitial

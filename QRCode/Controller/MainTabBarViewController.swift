@@ -51,7 +51,6 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
 extension MainTabBarViewController: QRScannerCodeDelegate {
     func qrScanner(_ controller: UIViewController, scanDidComplete result: String) {
         self.playSound()
-        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         self.createResult(result)
         self.selectedPreviousTab()
     }
@@ -77,10 +76,13 @@ extension MainTabBarViewController: QRScannerCodeDelegate {
     }
     
     private func playSound() {
-        var soundID: SystemSoundID = 0
-        let strSoundFile = Bundle.main.path(forResource: "1801", ofType: "wav")
-        AudioServicesCreateSystemSoundID(URL(fileURLWithPath: strSoundFile!) as CFURL, &soundID)
-        AudioServicesPlaySystemSound(soundID)
+        if AppSetting.shared.isSoundOn {
+            var soundID: SystemSoundID = 0
+            let strSoundFile = Bundle.main.path(forResource: "1801", ofType: "wav")
+            AudioServicesCreateSystemSoundID(URL(fileURLWithPath: strSoundFile!) as CFURL, &soundID)
+            AudioServicesPlaySystemSound(soundID)
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+        }
     }
     
 }

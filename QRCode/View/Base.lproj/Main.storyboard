@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Scan-->
         <scene sceneID="7qF-gi-aDn">
             <objects>
                 <viewController id="xwf-H8-e0y" customClass="ViewController" customModule="QRCode" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,7 +21,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8lt-2d-aPj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="qr_scan" id="dmT-ii-K2D"/>
+                    <tabBarItem key="tabBarItem" title="Scan" image="qr_scan" id="dmT-ii-K2D"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QiG-IJ-qGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -51,11 +51,11 @@
             </objects>
             <point key="canvasLocation" x="-670" y="-143"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--History-->
         <scene sceneID="Jgd-OJ-9mI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0cV-jv-P0L" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="history" id="l0J-Gj-zfD"/>
+                    <tabBarItem key="tabBarItem" title="History" image="history" id="l0J-Gj-zfD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="eoe-rS-F1R">
                         <rect key="frame" x="0.0" y="44" width="375" height="96"/>
@@ -319,11 +319,11 @@
             </objects>
             <point key="canvasLocation" x="2013.5999999999999" y="-474.38423645320199"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Setting-->
         <scene sceneID="IUq-T6-RL1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YKP-82-dfF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="setting" id="enY-iF-NCQ"/>
+                    <tabBarItem key="tabBarItem" title="Setting" image="setting" id="enY-iF-NCQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="sr9-5N-k8U">
                         <rect key="frame" x="0.0" y="44" width="375" height="96"/>
@@ -470,8 +470,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="539"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RuH-XJ-9AS">
-                                <rect key="frame" x="0.0" y="44" width="375" height="379"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RuH-XJ-9AS">
+                                <rect key="frame" x="0.0" y="44" width="375" height="411"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aPL-aj-TiQ" customClass="GADBannerView">

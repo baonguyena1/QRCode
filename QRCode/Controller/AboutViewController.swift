@@ -17,6 +17,8 @@ class AboutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAds()
+        let filePath = Bundle.main.path(forResource: "about", ofType: "html")
+        
     }
 
     fileprivate func setupAds() {

@@ -8,14 +8,29 @@
 
 import UIKit
 import RxSwift
-import RxCocoa
 
 class SettingController: UITableViewController {
 
     @IBOutlet weak var playSoundSwitch: UISwitch!
+    let bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let isSoundOn = AppSetting.shared.isSoundOn
+        playSoundSwitch.isOn = isSoundOn
+        setupRx()
+    }
+    
+    fileprivate func setupRx() {
+        self.playSoundSwitch
+            .rx.isOn
+            .changed
+            .throttle(0.5, scheduler: MainScheduler.instance)
+            .asObservable()
+            .subscribe(onNext: { (status) in
+                AppSetting.shared.setSound(isOn: status)
+            })
+            .disposed(by: bag)
     }
 
 }

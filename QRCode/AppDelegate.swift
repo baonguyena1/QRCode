@@ -8,6 +8,9 @@
 
 import UIKit
 import GoogleMobileAds
+import Instabug
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,13 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Override point for customization after application
+        Instabug.start(withToken: Constant.instaBugToken, invocationEvents: [.shake, .screenshot])
+        Fabric.with([Crashlytics.self])
         GADMobileAds.configure(withApplicationID: Constant.gadMobileAppID)
         _ = RealmManager.shared
         _ = GADManager.shared
-        //        try? RealmManager.realm.write {
-        //            RealmManager.realm.deleteAll()
-        //        }
         return true
     }
 

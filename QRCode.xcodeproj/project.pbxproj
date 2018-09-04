@@ -32,6 +32,7 @@
 		DCA69B022137A15C00A35DCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA69B002137A15C00A35DCD /* LaunchScreen.storyboard */; };
 		DCA69B0D2137A15C00A35DCD /* QRCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA69B0C2137A15C00A35DCD /* QRCodeTests.swift */; };
 		DCAF6135213E755B00564C04 /* SettingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF6134213E755B00564C04 /* SettingContainerViewController.swift */; };
+		DCAF6137213E76FD00564C04 /* AppSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF6136213E76FD00564C04 /* AppSetting.swift */; };
 		DCD299792137E7F8001F31CC /* UITableView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD299782137E7F8001F31CC /* UITableView+Helper.swift */; };
 		DCD2997B2137EAB2001F31CC /* Date+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2997A2137EAB2001F31CC /* Date+helper.swift */; };
 		DCD32C292137FEAF00BDA200 /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD32C282137FEAF00BDA200 /* HistoryDetailViewController.swift */; };
@@ -85,6 +86,7 @@
 		DCA69B0C2137A15C00A35DCD /* QRCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeTests.swift; sourceTree = "<group>"; };
 		DCA69B0E2137A15C00A35DCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCAF6134213E755B00564C04 /* SettingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingContainerViewController.swift; sourceTree = "<group>"; };
+		DCAF6136213E76FD00564C04 /* AppSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSetting.swift; sourceTree = "<group>"; };
 		DCD299782137E7F8001F31CC /* UITableView+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Helper.swift"; sourceTree = "<group>"; };
 		DCD2997A2137EAB2001F31CC /* Date+helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+helper.swift"; sourceTree = "<group>"; };
 		DCD32C282137FEAF00BDA200 /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				DCECCEF02137D467004C3345 /* History.swift */,
+				DCAF6136213E76FD00564C04 /* AppSetting.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				DCA69AF22137A15A00A35DCD /* Resources */,
 				9E9A32C6F590AA79A3A39F90 /* [CP] Embed Pods Frameworks */,
 				DCD32C262137F91900BDA200 /* ShellScript */,
+				DC4D28F1213E86FC00DE3CA2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -378,6 +382,8 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-QRCode/Pods-QRCode-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${PODS_ROOT}/Instabug/Instabug.framework",
+				"${PODS_ROOT}/Instabug/Instabug.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -390,6 +396,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instabug.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Instabug.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -421,6 +429,19 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DC4D28F1213E86FC00DE3CA2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Release\" ]; then\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\")\nprefix=${buildNumber:0:1}\nbuildNumber=${buildNumber:1}\nnewSubBuild=`echo $buildNumber | awk -F \".\" '{print $2}'`\nnewSubBuild=$(($newSubBuild + 1))\nnewSubBuildString=`echo $buildNumber | awk -F \".\" '{print $1 \".'$newSubBuild'\" }'`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $prefix$newSubBuildString\" \"$INFOPLIST_FILE\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $prefix$newSubBuildString\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\nfi";
+		};
 		DCD32C262137F91900BDA200 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -432,7 +453,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" d680067b50aa01ab400c1022c5d0e30bfffdc45b 927a3bc154d0e69388c09a0a30e659f860530cbef4947e8a22cf4ffddc0ccfb1";
 		};
 		F3A800E6D0A1BC914EA0128A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -469,6 +490,7 @@
 				DCAF6135213E755B00564C04 /* SettingContainerViewController.swift in Sources */,
 				DC080D412137D05F0080B4A5 /* Protocol.swift in Sources */,
 				DCECCEF32137D5BB004C3345 /* RealmManager.swift in Sources */,
+				DCAF6137213E76FD00564C04 /* AppSetting.swift in Sources */,
 				DC080D3B2137CE020080B4A5 /* Storyboarded.swift in Sources */,
 				DC15CD6221393BB1001E8043 /* Logger.swift in Sources */,
 				DC2AE7E521391E5D00812224 /* Constant.swift in Sources */,
