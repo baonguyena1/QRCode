@@ -22,11 +22,16 @@
 		DC50F60A213E5FDD008D240E /* 1801.wav in Resources */ = {isa = PBXBuildFile; fileRef = DC50F609213E5FDD008D240E /* 1801.wav */; };
 		DC6310EE2139500F0062BCFA /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6310ED2139500F0062BCFA /* MainTabBarViewController.swift */; };
 		DC884E6B2137C6DA00D25CDE /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC884E6A2137C6DA00D25CDE /* HistoryViewController.swift */; };
+		DC92DBCB213E69C1001E9019 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC92DBCA213E69C1001E9019 /* SettingController.swift */; };
+		DC92DBCD213E6A5A001E9019 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC92DBCC213E6A5A001E9019 /* SettingViewModel.swift */; };
+		DC92DBD1213E6F7B001E9019 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC92DBD0213E6F7B001E9019 /* AboutViewController.swift */; };
+		DC92DBD3213E7139001E9019 /* bout.html in Resources */ = {isa = PBXBuildFile; fileRef = DC92DBD2213E7139001E9019 /* bout.html */; };
 		DCA69AF82137A15A00A35DCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA69AF72137A15A00A35DCD /* AppDelegate.swift */; };
 		DCA69AFD2137A15A00A35DCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA69AFB2137A15A00A35DCD /* Main.storyboard */; };
 		DCA69AFF2137A15C00A35DCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCA69AFE2137A15C00A35DCD /* Assets.xcassets */; };
 		DCA69B022137A15C00A35DCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA69B002137A15C00A35DCD /* LaunchScreen.storyboard */; };
 		DCA69B0D2137A15C00A35DCD /* QRCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA69B0C2137A15C00A35DCD /* QRCodeTests.swift */; };
+		DCAF6135213E755B00564C04 /* SettingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF6134213E755B00564C04 /* SettingContainerViewController.swift */; };
 		DCD299792137E7F8001F31CC /* UITableView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD299782137E7F8001F31CC /* UITableView+Helper.swift */; };
 		DCD2997B2137EAB2001F31CC /* Date+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2997A2137EAB2001F31CC /* Date+helper.swift */; };
 		DCD32C292137FEAF00BDA200 /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD32C282137FEAF00BDA200 /* HistoryDetailViewController.swift */; };
@@ -66,6 +71,10 @@
 		DC50F609213E5FDD008D240E /* 1801.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1801.wav; sourceTree = "<group>"; };
 		DC6310ED2139500F0062BCFA /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		DC884E6A2137C6DA00D25CDE /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		DC92DBCA213E69C1001E9019 /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
+		DC92DBCC213E6A5A001E9019 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		DC92DBD0213E6F7B001E9019 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		DC92DBD2213E7139001E9019 /* bout.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = bout.html; sourceTree = "<group>"; };
 		DCA69AF42137A15A00A35DCD /* QRCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA69AF72137A15A00A35DCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCA69AFC2137A15A00A35DCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -75,6 +84,7 @@
 		DCA69B082137A15C00A35DCD /* QRCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QRCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA69B0C2137A15C00A35DCD /* QRCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeTests.swift; sourceTree = "<group>"; };
 		DCA69B0E2137A15C00A35DCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCAF6134213E755B00564C04 /* SettingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingContainerViewController.swift; sourceTree = "<group>"; };
 		DCD299782137E7F8001F31CC /* UITableView+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Helper.swift"; sourceTree = "<group>"; };
 		DCD2997A2137EAB2001F31CC /* Date+helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+helper.swift"; sourceTree = "<group>"; };
 		DCD32C282137FEAF00BDA200 /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +172,7 @@
 		DC458A1D2137A3FB00094C4B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				DC92DBD2213E7139001E9019 /* bout.html */,
 				DC50F609213E5FDD008D240E /* 1801.wav */,
 				DCA69AFE2137A15C00A35DCD /* Assets.xcassets */,
 				DCA69B032137A15C00A35DCD /* Info.plist */,
@@ -176,6 +187,9 @@
 				DCD32C282137FEAF00BDA200 /* HistoryDetailViewController.swift */,
 				DC15CD6321393F6F001E8043 /* ViewController.swift */,
 				DC6310ED2139500F0062BCFA /* MainTabBarViewController.swift */,
+				DC92DBCA213E69C1001E9019 /* SettingController.swift */,
+				DC92DBD0213E6F7B001E9019 /* AboutViewController.swift */,
+				DCAF6134213E755B00564C04 /* SettingContainerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -185,6 +199,7 @@
 			children = (
 				DC080D352137CA030080B4A5 /* HistoryViewModel.swift */,
 				DCD32C2A213803C600BDA200 /* HistoryDetailViewModel.swift */,
+				DC92DBCC213E6A5A001E9019 /* SettingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -336,6 +351,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC92DBD3213E7139001E9019 /* bout.html in Resources */,
 				DCA69B022137A15C00A35DCD /* LaunchScreen.storyboard in Resources */,
 				DCA69AFF2137A15C00A35DCD /* Assets.xcassets in Resources */,
 				DC50F60A213E5FDD008D240E /* 1801.wav in Resources */,
@@ -449,6 +465,8 @@
 				DCECCEF12137D467004C3345 /* History.swift in Sources */,
 				DCD4A402213E2465008FC531 /* String+Helper.swift in Sources */,
 				DC080D362137CA030080B4A5 /* HistoryViewModel.swift in Sources */,
+				DC92DBCB213E69C1001E9019 /* SettingController.swift in Sources */,
+				DCAF6135213E755B00564C04 /* SettingContainerViewController.swift in Sources */,
 				DC080D412137D05F0080B4A5 /* Protocol.swift in Sources */,
 				DCECCEF32137D5BB004C3345 /* RealmManager.swift in Sources */,
 				DC080D3B2137CE020080B4A5 /* Storyboarded.swift in Sources */,
@@ -461,8 +479,10 @@
 				DCD2997B2137EAB2001F31CC /* Date+helper.swift in Sources */,
 				DC080D392137CDFD0080B4A5 /* UIView+Helper.swift in Sources */,
 				DC884E6B2137C6DA00D25CDE /* HistoryViewController.swift in Sources */,
+				DC92DBCD213E6A5A001E9019 /* SettingViewModel.swift in Sources */,
 				DC15CD5E213936B5001E8043 /* GADManager.swift in Sources */,
 				DCD32C2B213803C600BDA200 /* HistoryDetailViewModel.swift in Sources */,
+				DC92DBD1213E6F7B001E9019 /* AboutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
