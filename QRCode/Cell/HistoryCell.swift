@@ -22,7 +22,7 @@ class HistoryCell: UITableViewCell, Identifiable {
         didSet {
             self.titleLabel.text = history.content
             self.subtitleLabel.text = history.createdDate.toString
-            self.iconImageView.image = history.contentType.image
+//            self.iconImageView.image = history.contentType.image
         }
     }
 

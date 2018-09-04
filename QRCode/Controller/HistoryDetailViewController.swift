@@ -59,16 +59,18 @@ class HistoryDetailViewController: UIViewController, Storyboarded {
                 
                 let content = self.history.content
                 if let url = URL(string: content), UIApplication.shared.canOpenURL(url) {
+                    // Open URL or Call phone
                     if #available(iOS 10.0, *) {
                         UIApplication.shared.open(url, options: [:], completionHandler: nil)
                     } else {
                         UIApplication.shared.openURL(url)
                     }
-                } else if MFMailComposeViewController.canSendMail() {
-                    self.sendEmail(with: content)
-                } else if MFMessageComposeViewController.canSendText() {
-                    self.sendSMS(with: content)
                 }
+//                else if MFMailComposeViewController.canSendMail() {
+//                    self.sendEmail(with: content)
+//                } else if MFMessageComposeViewController.canSendText() {
+//                    self.sendSMS(with: content)
+//                }
             })
             .disposed(by: bag)
         
@@ -96,33 +98,66 @@ class HistoryDetailViewController: UIViewController, Storyboarded {
 
 }
 
-extension HistoryDetailViewController: MFMailComposeViewControllerDelegate {
-    fileprivate func sendEmail(with content: String) {
-        let composeVC = MFMailComposeViewController()
-        composeVC.mailComposeDelegate = self
-        composeVC.setToRecipients([content
-            ])
-        composeVC.setSubject("")
-        composeVC.setMessageBody("", isHTML: false)
-        self.present(composeVC, animated: true, completion: nil)
-    }
-    
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-}
-
-extension HistoryDetailViewController: MFMessageComposeViewControllerDelegate {
-    fileprivate func sendSMS(with content: String) {
-        let controller = MFMessageComposeViewController()
-        controller.subject = ""
-        controller.body = ""
-        controller.recipients = [content]
-        controller.messageComposeDelegate = self
-        self.present(controller, animated: true, completion: nil)
-    }
-    
-    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-}
+//extension HistoryDetailViewController: MFMailComposeViewControllerDelegate {
+//    fileprivate func sendEmail(with content: String) {
+//        let composeVC = MFMailComposeViewController()
+//        composeVC.mailComposeDelegate = self
+//        composeVC.setToRecipients([content
+//            ])
+//        composeVC.setSubject("")
+//        composeVC.setMessageBody("", isHTML: false)
+//        self.present(composeVC, animated: true, completion: nil)
+//    }
+//
+//    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+//        controller.dismiss(animated: true, completion: nil)
+//    }
+//}
+//
+//extension HistoryDetailViewController: MFMessageComposeViewControllerDelegate {
+//    fileprivate func sendSMS(with content: String) {
+//        let controller = MFMessageComposeViewController()
+//        let parseContent = self.parseSMSContent(content: content)
+//        controller.subject = parseContent.0
+//        controller.body = parseContent.1
+//        controller.recipients = parseContent.2
+//        controller.messageComposeDelegate = self
+//        self.present(controller, animated: true, completion: nil)
+//    }
+//
+//    private func parseSMSContent(content: String) -> (String, String, [String]) {
+//        if !content.hasPrefix("MATMSG") || !content.hasPrefix("SMSTO") {
+//            return ("", "", [content])
+//        }
+//        if content.hasPrefix("MATMSG") {
+//            let start = content.index(content.startIndex, offsetBy: "MATMSG".count + 1)
+//            let mainContent = content[start...] as NSString
+//
+//            var startIndex = mainContent.range(of: "TO:").upperBound
+//            var endIndex = mainContent.range(of: ";SUB:").lowerBound
+//            var range = NSMakeRange(startIndex, endIndex - startIndex)
+//            let recipients = mainContent.substring(with: range).components(separatedBy: ",")
+//
+//            startIndex = mainContent.range(of: ";SUB:").upperBound
+//            endIndex = mainContent.range(of: ";BODY:").lowerBound
+//            range = NSMakeRange(startIndex, endIndex - startIndex)
+//            let sub = mainContent.substring(with: range)
+//
+//            startIndex = mainContent.range(of: ";BODY:").upperBound
+//            endIndex = mainContent.range(of: ";;").lowerBound
+//            range = NSMakeRange(startIndex, endIndex - startIndex)
+//            let body = mainContent.substring(with: range)
+//            return (sub, body, recipients)
+//        }
+//        if content.hasPrefix("SMSTO") {
+//            let start = content.index(content.startIndex, offsetBy: "SMSTO".count + 1)
+//            let mainContent = content[start...] as NSString
+//
+//        }
+//        return ("", "", [])
+//    }
+//
+//    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+//        controller.dismiss(animated: true, completion: nil)
+//    }
+//}

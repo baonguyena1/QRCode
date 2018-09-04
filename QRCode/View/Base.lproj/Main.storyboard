@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -110,6 +109,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_barcode_scanner" translatesAutoresizingMaskIntoConstraints="NO" id="MRT-Lv-ilv">
                                                     <rect key="frame" x="16" y="21.666666666666664" width="65" height="65.333333333333343"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="AYo-l6-jtT"/>
                                                         <constraint firstAttribute="width" secondItem="MRT-Lv-ilv" secondAttribute="height" multiplier="1:1" id="jSe-hn-10Q"/>
                                                     </constraints>
                                                 </imageView>
@@ -127,7 +127,6 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="MRT-Lv-ilv" firstAttribute="height" secondItem="qvi-At-gt3" secondAttribute="height" multiplier="0.6" id="6oI-8A-afx"/>
                                                 <constraint firstItem="k4E-Rx-ulj" firstAttribute="trailing" secondItem="E8b-x0-eVa" secondAttribute="trailing" id="D1O-LR-uOd"/>
                                                 <constraint firstItem="MRT-Lv-ilv" firstAttribute="centerY" secondItem="qvi-At-gt3" secondAttribute="centerY" id="Mc7-0X-wdI"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="k4E-Rx-ulj" secondAttribute="bottom" constant="16" id="WtX-Ym-jS1"/>

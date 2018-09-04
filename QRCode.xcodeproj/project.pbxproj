@@ -197,7 +197,6 @@
 		DC884E6E2137C7A200D25CDE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DC080D3C2137D01C0080B4A5 /* Cell */,
 				DCA69AFB2137A15A00A35DCD /* Main.storyboard */,
 				DCA69B002137A15C00A35DCD /* LaunchScreen.storyboard */,
 			);
@@ -232,6 +231,7 @@
 				DC884E6D2137C79500D25CDE /* Model */,
 				DC884E6C2137C78A00D25CDE /* ViewModel */,
 				DC884E692137AE4C00D25CDE /* Controller */,
+				DC080D3C2137D01C0080B4A5 /* Cell */,
 				DC884E6E2137C7A200D25CDE /* View */,
 				DC458A1D2137A3FB00094C4B /* Resource */,
 				DCA69AF72137A15A00A35DCD /* AppDelegate.swift */,
