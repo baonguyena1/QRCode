@@ -14,10 +14,11 @@ target 'QRCode' do
   pod 'DZNEmptyDataSet'
   pod 'Google-Mobile-Ads-SDK'
   pod 'SwiftQRScanner', :git => ‘https://github.com/vinodiOS/SwiftQRScanner’
-  pod 'Instabug'
+#  pod 'Instabug'
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'Sparrow/LaunchAnimation’, :git => 'https://github.com/IvanVorobei/Sparrow.git’
+  pod 'YPImagePicker'
 
   target 'QRCodeTests' do
     inherit! :search_paths

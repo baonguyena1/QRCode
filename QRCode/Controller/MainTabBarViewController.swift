@@ -22,21 +22,23 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         self.delegate = self
     }
     
-    fileprivate func showCamera() {
+    private func showCamera() {
         let scanner = QRCodeScannerController(cameraImage: #imageLiteral(resourceName: "ic_camera"), cancelImage: #imageLiteral(resourceName: "ic_cancel"), flashOnImage: #imageLiteral(resourceName: "ic_flash_on"), flashOffImage: #imageLiteral(resourceName: "ic_flash_off"))
         scanner.delegate = self
+        let navigation = UINavigationController(rootViewController: scanner)
+        navigation.navigationBar.isHidden = true
         DispatchQueue.main.async { [unowned self] in
-            self.present(scanner, animated: true, completion: nil)
+            self.present(navigation, animated: true, completion: nil)
         }
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         let index = self.tabBar.items?.index(of: item) ?? 0
-        currentIndex = index
-        if currentIndex == 1 {
-            showCamera()
+        self.currentIndex = index
+        if self.currentIndex == 1 {
+            self.showCamera()
         } else {
-            previousIndex = index
+            self.previousIndex = index
         }
     }
     
@@ -62,6 +64,9 @@ extension MainTabBarViewController: QRScannerCodeDelegate {
     func qrScannerDidCancel(_ controller: UIViewController) {
         self.selectedPreviousTab()
     }
+}
+
+extension MainTabBarViewController {
     
     fileprivate func selectedPreviousTab() {
         self.selectedIndex = previousIndex
@@ -75,7 +80,7 @@ extension MainTabBarViewController: QRScannerCodeDelegate {
         }
     }
     
-    private func playSound() {
+    fileprivate func playSound() {
         if AppSetting.shared.isSoundOn {
             var soundID: SystemSoundID = 0
             let strSoundFile = Bundle.main.path(forResource: "1801", ofType: "wav")
@@ -84,5 +89,4 @@ extension MainTabBarViewController: QRScannerCodeDelegate {
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         }
     }
-    
 }

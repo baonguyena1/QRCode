@@ -17,8 +17,8 @@
 		DC15CD5E213936B5001E8043 /* GADManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC15CD5D213936B5001E8043 /* GADManager.swift */; };
 		DC15CD6021393A3E001E8043 /* UIApplication+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC15CD5F21393A3E001E8043 /* UIApplication+Helper.swift */; };
 		DC15CD6221393BB1001E8043 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC15CD6121393BB0001E8043 /* Logger.swift */; };
-		DC15CD6421393F6F001E8043 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC15CD6321393F6F001E8043 /* ViewController.swift */; };
 		DC2AE7E521391E5D00812224 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AE7E421391E5D00812224 /* Constant.swift */; };
+		DC321916213F7A3F00C70DEE /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321915213F7A3F00C70DEE /* PhotoViewController.swift */; };
 		DC50F60A213E5FDD008D240E /* 1801.wav in Resources */ = {isa = PBXBuildFile; fileRef = DC50F609213E5FDD008D240E /* 1801.wav */; };
 		DC6310EE2139500F0062BCFA /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6310ED2139500F0062BCFA /* MainTabBarViewController.swift */; };
 		DC884E6B2137C6DA00D25CDE /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC884E6A2137C6DA00D25CDE /* HistoryViewController.swift */; };
@@ -66,9 +66,9 @@
 		DC15CD5D213936B5001E8043 /* GADManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADManager.swift; sourceTree = "<group>"; };
 		DC15CD5F21393A3E001E8043 /* UIApplication+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Helper.swift"; sourceTree = "<group>"; };
 		DC15CD6121393BB0001E8043 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		DC15CD6321393F6F001E8043 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DC2AE7E421391E5D00812224 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		DC2AE7E621391EEA00812224 /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DZNEmptyDataSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC321915213F7A3F00C70DEE /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		DC50F609213E5FDD008D240E /* 1801.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1801.wav; sourceTree = "<group>"; };
 		DC6310ED2139500F0062BCFA /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		DC884E6A2137C6DA00D25CDE /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -187,11 +187,11 @@
 			children = (
 				DC884E6A2137C6DA00D25CDE /* HistoryViewController.swift */,
 				DCD32C282137FEAF00BDA200 /* HistoryDetailViewController.swift */,
-				DC15CD6321393F6F001E8043 /* ViewController.swift */,
 				DC6310ED2139500F0062BCFA /* MainTabBarViewController.swift */,
 				DC92DBCA213E69C1001E9019 /* SettingController.swift */,
 				DC92DBD0213E6F7B001E9019 /* AboutViewController.swift */,
 				DCAF6134213E755B00564C04 /* SettingContainerViewController.swift */,
+				DC321915213F7A3F00C70DEE /* PhotoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -382,31 +382,33 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-QRCode/Pods-QRCode-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
-				"${PODS_ROOT}/Instabug/Instabug.framework",
-				"${PODS_ROOT}/Instabug/Instabug.framework.dSYM",
+				"${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Sparrow/Sparrow.framework",
+				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftQRScanner/SwiftQRScanner.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instabug.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/Instabug.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PryntTrimmerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparrow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftQRScanner.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YPImagePicker.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -499,7 +501,6 @@
 				DCD299792137E7F8001F31CC /* UITableView+Helper.swift in Sources */,
 				DC6310EE2139500F0062BCFA /* MainTabBarViewController.swift in Sources */,
 				DCD32C292137FEAF00BDA200 /* HistoryDetailViewController.swift in Sources */,
-				DC15CD6421393F6F001E8043 /* ViewController.swift in Sources */,
 				DCD2997B2137EAB2001F31CC /* Date+helper.swift in Sources */,
 				DC080D392137CDFD0080B4A5 /* UIView+Helper.swift in Sources */,
 				DC884E6B2137C6DA00D25CDE /* HistoryViewController.swift in Sources */,
@@ -507,6 +508,7 @@
 				DC15CD5E213936B5001E8043 /* GADManager.swift in Sources */,
 				DCD32C2B213803C600BDA200 /* HistoryDetailViewModel.swift in Sources */,
 				DC92DBD1213E6F7B001E9019 /* AboutViewController.swift in Sources */,
+				DC321916213F7A3F00C70DEE /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
