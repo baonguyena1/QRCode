@@ -44,6 +44,7 @@ class GADManager: NSObject {
         let request = GADRequest()
         request.testDevices = [ kGADSimulatorID]
         interstitial.load(request)
+        interstitial.delegate = self
         return interstitial
     }
     

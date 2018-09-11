@@ -13,3 +13,7 @@ struct Constant {
     static let instaBugToken = "89be4a54a8f3cc96ac85582ff08f59b0"
     static let isSoundOn = "isSoundOn"
 }
+
+struct SegueIdentifier {
+    static let gotoAbout = "gotoAbout"
+}

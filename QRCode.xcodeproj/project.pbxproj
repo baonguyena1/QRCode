@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		03420395B5DA674B4D5AC4D3 /* Pods_QRCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A170B917F1CFFA6E9AEDC079 /* Pods_QRCode.framework */; };
 		18D6E35CA91D0D4C81EE3135 /* Pods_QRCodeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6179027C0280B88CCE0F7BF /* Pods_QRCodeTests.framework */; };
+		9B6A30E32147704800B48D69 /* SoundSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A30E22147704800B48D69 /* SoundSettingCell.swift */; };
+		9B6A30E52147705B00B48D69 /* AboutSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A30E42147705B00B48D69 /* AboutSettingCell.swift */; };
+		9B6A30E72147706B00B48D69 /* VersionSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A30E62147706B00B48D69 /* VersionSettingCell.swift */; };
 		DC080D362137CA030080B4A5 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC080D352137CA030080B4A5 /* HistoryViewModel.swift */; };
 		DC080D392137CDFD0080B4A5 /* UIView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC080D382137CDFD0080B4A5 /* UIView+Helper.swift */; };
 		DC080D3B2137CE020080B4A5 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC080D3A2137CE020080B4A5 /* Storyboarded.swift */; };
@@ -22,7 +25,6 @@
 		DC50F60A213E5FDD008D240E /* 1801.wav in Resources */ = {isa = PBXBuildFile; fileRef = DC50F609213E5FDD008D240E /* 1801.wav */; };
 		DC6310EE2139500F0062BCFA /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6310ED2139500F0062BCFA /* MainTabBarViewController.swift */; };
 		DC884E6B2137C6DA00D25CDE /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC884E6A2137C6DA00D25CDE /* HistoryViewController.swift */; };
-		DC92DBCB213E69C1001E9019 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC92DBCA213E69C1001E9019 /* SettingController.swift */; };
 		DC92DBCD213E6A5A001E9019 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC92DBCC213E6A5A001E9019 /* SettingViewModel.swift */; };
 		DC92DBD1213E6F7B001E9019 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC92DBD0213E6F7B001E9019 /* AboutViewController.swift */; };
 		DC92DBD3213E7139001E9019 /* bout.html in Resources */ = {isa = PBXBuildFile; fileRef = DC92DBD2213E7139001E9019 /* bout.html */; };
@@ -31,7 +33,7 @@
 		DCA69AFF2137A15C00A35DCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCA69AFE2137A15C00A35DCD /* Assets.xcassets */; };
 		DCA69B022137A15C00A35DCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA69B002137A15C00A35DCD /* LaunchScreen.storyboard */; };
 		DCA69B0D2137A15C00A35DCD /* QRCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA69B0C2137A15C00A35DCD /* QRCodeTests.swift */; };
-		DCAF6135213E755B00564C04 /* SettingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF6134213E755B00564C04 /* SettingContainerViewController.swift */; };
+		DCAF6135213E755B00564C04 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF6134213E755B00564C04 /* SettingViewController.swift */; };
 		DCAF6137213E76FD00564C04 /* AppSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAF6136213E76FD00564C04 /* AppSetting.swift */; };
 		DCD299792137E7F8001F31CC /* UITableView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD299782137E7F8001F31CC /* UITableView+Helper.swift */; };
 		DCD2997B2137EAB2001F31CC /* Date+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2997A2137EAB2001F31CC /* Date+helper.swift */; };
@@ -57,6 +59,9 @@
 		21FC9467E5A06FACDE608D3A /* Pods-QRCodeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRCodeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QRCodeTests/Pods-QRCodeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4DC425063886CA0AA10F9CF2 /* Pods-QRCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRCode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QRCode/Pods-QRCode.debug.xcconfig"; sourceTree = "<group>"; };
 		7E76846BCF770D9EE274E2CA /* Pods-QRCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRCode.release.xcconfig"; path = "Pods/Target Support Files/Pods-QRCode/Pods-QRCode.release.xcconfig"; sourceTree = "<group>"; };
+		9B6A30E22147704800B48D69 /* SoundSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSettingCell.swift; sourceTree = "<group>"; };
+		9B6A30E42147705B00B48D69 /* AboutSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSettingCell.swift; sourceTree = "<group>"; };
+		9B6A30E62147706B00B48D69 /* VersionSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionSettingCell.swift; sourceTree = "<group>"; };
 		A170B917F1CFFA6E9AEDC079 /* Pods_QRCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QRCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC080D352137CA030080B4A5 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		DC080D382137CDFD0080B4A5 /* UIView+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Helper.swift"; sourceTree = "<group>"; };
@@ -72,7 +77,6 @@
 		DC50F609213E5FDD008D240E /* 1801.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1801.wav; sourceTree = "<group>"; };
 		DC6310ED2139500F0062BCFA /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		DC884E6A2137C6DA00D25CDE /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
-		DC92DBCA213E69C1001E9019 /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		DC92DBCC213E6A5A001E9019 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		DC92DBD0213E6F7B001E9019 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		DC92DBD2213E7139001E9019 /* bout.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = bout.html; sourceTree = "<group>"; };
@@ -85,7 +89,7 @@
 		DCA69B082137A15C00A35DCD /* QRCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QRCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA69B0C2137A15C00A35DCD /* QRCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeTests.swift; sourceTree = "<group>"; };
 		DCA69B0E2137A15C00A35DCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DCAF6134213E755B00564C04 /* SettingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingContainerViewController.swift; sourceTree = "<group>"; };
+		DCAF6134213E755B00564C04 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		DCAF6136213E76FD00564C04 /* AppSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSetting.swift; sourceTree = "<group>"; };
 		DCD299782137E7F8001F31CC /* UITableView+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Helper.swift"; sourceTree = "<group>"; };
 		DCD2997A2137EAB2001F31CC /* Date+helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+helper.swift"; sourceTree = "<group>"; };
@@ -155,6 +159,9 @@
 			isa = PBXGroup;
 			children = (
 				DC080D3D2137D0380080B4A5 /* HistoryCell.swift */,
+				9B6A30E22147704800B48D69 /* SoundSettingCell.swift */,
+				9B6A30E42147705B00B48D69 /* AboutSettingCell.swift */,
+				9B6A30E62147706B00B48D69 /* VersionSettingCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -188,9 +195,8 @@
 				DC884E6A2137C6DA00D25CDE /* HistoryViewController.swift */,
 				DCD32C282137FEAF00BDA200 /* HistoryDetailViewController.swift */,
 				DC6310ED2139500F0062BCFA /* MainTabBarViewController.swift */,
-				DC92DBCA213E69C1001E9019 /* SettingController.swift */,
 				DC92DBD0213E6F7B001E9019 /* AboutViewController.swift */,
-				DCAF6134213E755B00564C04 /* SettingContainerViewController.swift */,
+				DCAF6134213E755B00564C04 /* SettingViewController.swift */,
 				DC321915213F7A3F00C70DEE /* PhotoViewController.swift */,
 			);
 			path = Controller;
@@ -488,15 +494,17 @@
 				DCA69AF82137A15A00A35DCD /* AppDelegate.swift in Sources */,
 				DC15CD6021393A3E001E8043 /* UIApplication+Helper.swift in Sources */,
 				DCECCEF12137D467004C3345 /* History.swift in Sources */,
+				9B6A30E52147705B00B48D69 /* AboutSettingCell.swift in Sources */,
+				9B6A30E32147704800B48D69 /* SoundSettingCell.swift in Sources */,
 				DCD4A402213E2465008FC531 /* String+Helper.swift in Sources */,
 				DC080D362137CA030080B4A5 /* HistoryViewModel.swift in Sources */,
-				DC92DBCB213E69C1001E9019 /* SettingController.swift in Sources */,
-				DCAF6135213E755B00564C04 /* SettingContainerViewController.swift in Sources */,
+				DCAF6135213E755B00564C04 /* SettingViewController.swift in Sources */,
 				DC080D412137D05F0080B4A5 /* Protocol.swift in Sources */,
 				DCECCEF32137D5BB004C3345 /* RealmManager.swift in Sources */,
 				DCAF6137213E76FD00564C04 /* AppSetting.swift in Sources */,
 				DC080D3B2137CE020080B4A5 /* Storyboarded.swift in Sources */,
 				DC15CD6221393BB1001E8043 /* Logger.swift in Sources */,
+				9B6A30E72147706B00B48D69 /* VersionSettingCell.swift in Sources */,
 				DC2AE7E521391E5D00812224 /* Constant.swift in Sources */,
 				DCD299792137E7F8001F31CC /* UITableView+Helper.swift in Sources */,
 				DC6310EE2139500F0062BCFA /* MainTabBarViewController.swift in Sources */,
