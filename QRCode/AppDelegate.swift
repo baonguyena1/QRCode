@@ -8,7 +8,6 @@
 
 import UIKit
 import GoogleMobileAds
-//import Instabug
 import Fabric
 import Crashlytics
 import Sparrow
@@ -22,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application
         
         application.isIdleTimerDisabled = true
-//        Instabug.start(withToken: Constant.instaBugToken, invocationEvents: [.shake, .screenshot])
         Fabric.with([Crashlytics.self])
         GADMobileAds.configure(withApplicationID: Constant.gadMobileAppID)
         _ = RealmManager.shared
