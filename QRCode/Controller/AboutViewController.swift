@@ -17,7 +17,7 @@ class AboutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAds()
-        
+        loadContent()
     }
 
     fileprivate func setupAds() {
@@ -26,5 +26,11 @@ class AboutViewController: UIViewController {
         let request = GADRequest()
         request.testDevices = [kGADSimulatorID]
         bannerView.load(request)
+    }
+    
+    fileprivate func loadContent() {
+        guard let url = Bundle.main.url(forResource: "about", withExtension: "html") else { return }
+        let request = URLRequest(url: url)
+        webView.loadRequest(request)
     }
 }

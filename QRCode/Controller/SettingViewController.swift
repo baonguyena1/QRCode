@@ -42,16 +42,27 @@ class SettingViewController: UIViewController {
 }
 
 extension SettingViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Sound"
+        }
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let row = indexPath.row
+        let section = indexPath.section
         var cell: UITableViewCell = UITableViewCell()
-        if row == 0 {
+        if section == 0 {
             cell = tableView.dequeueReusableCell(withIdentifier: SoundSettingCell.identifier, for: indexPath)
-        } else if row == 1 {
+        } else if section == 1 {
             cell = tableView.dequeueReusableCell(withIdentifier: AboutSettingCell.identifier, for: indexPath)
         } else {
             cell = tableView.dequeueReusableCell(withIdentifier: VersionSettingCell.identifier, for: indexPath)
@@ -62,7 +73,7 @@ extension SettingViewController: UITableViewDataSource {
 
 extension SettingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 1 { // About
+        if indexPath.section == 1 { // About
             self.performSegue(withIdentifier: SegueIdentifier.gotoAbout, sender: nil)
         }
         tableView.deselectRow(at: indexPath, animated: true)
