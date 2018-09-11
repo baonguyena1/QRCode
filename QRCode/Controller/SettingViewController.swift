@@ -37,9 +37,7 @@ class SettingViewController: UIViewController {
 
     fileprivate func setupTableView() {
         self.tableView.tableFooterView = UIView()
-        self.soundCell = tableView.dequeueReusableCell(withIdentifier: SoundSettingCell.identifier) as! SoundSettingCell
-        self.aboutCell = tableView.dequeueReusableCell(withIdentifier: AboutSettingCell.identifier) as! AboutSettingCell
-        self.versionCell = tableView.dequeueReusableCell(withIdentifier: VersionSettingCell.identifier) as! VersionSettingCell
+        
     }
 }
 
@@ -50,12 +48,15 @@ extension SettingViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
+        var cell: UITableViewCell = UITableViewCell()
         if row == 0 {
-            return soundCell
+            cell = tableView.dequeueReusableCell(withIdentifier: SoundSettingCell.identifier, for: indexPath)
         } else if row == 1 {
-            return aboutCell
+            cell = tableView.dequeueReusableCell(withIdentifier: AboutSettingCell.identifier, for: indexPath)
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: VersionSettingCell.identifier, for: indexPath)
         }
-        return versionCell
+        return cell
     }
 }
 
