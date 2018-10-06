@@ -33,14 +33,7 @@ class History: Object {
     @objc dynamic var content: String = ""
     @objc dynamic var createdDate: Date = Date()
     
-//    var contentType: ContentType {
-//        if content.isURL() {
-//            return .url
-//        } else if content.isEmail() {
-//            return .email
-//        } else if content.isPhone() {
-//            return .phone
-//        }
-//        return .text
-//    }
+    static func object(with content: String) -> History? {
+        return RealmManager.realm.objects(History.self).filter("content == \(content)").first
+    }
 }

@@ -14,6 +14,8 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     fileprivate var currentIndex: Int!
     fileprivate var previousIndex: Int!
+    
+    let strSoundFile = Bundle.main.path(forResource: "1801", ofType: "wav")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +85,6 @@ extension MainTabBarViewController {
     fileprivate func playSound() {
         if AppSetting.shared.isSoundOn {
             var soundID: SystemSoundID = 0
-            let strSoundFile = Bundle.main.path(forResource: "1801", ofType: "wav")
             AudioServicesCreateSystemSoundID(URL(fileURLWithPath: strSoundFile!) as CFURL, &soundID)
             AudioServicesPlaySystemSound(soundID)
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)

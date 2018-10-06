@@ -142,6 +142,40 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BF544B652168759A00AA6296 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				DC884E6A2137C6DA00D25CDE /* HistoryViewController.swift */,
+				DCD32C282137FEAF00BDA200 /* HistoryDetailViewController.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		BF544B66216875A600AA6296 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				DC92DBD0213E6F7B001E9019 /* AboutViewController.swift */,
+				DCAF6134213E755B00564C04 /* SettingViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		BFEAD63E21686F9F008B7066 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				DC50F609213E5FDD008D240E /* 1801.wav */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		BFEAD63F21686FA9008B7066 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				DC92DBD2213E7139001E9019 /* about.html */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
 		DC080D372137CDD80080B4A5 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,8 +215,8 @@
 		DC458A1D2137A3FB00094C4B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				DC92DBD2213E7139001E9019 /* about.html */,
-				DC50F609213E5FDD008D240E /* 1801.wav */,
+				BFEAD63F21686FA9008B7066 /* File */,
+				BFEAD63E21686F9F008B7066 /* Audio */,
 				DCA69AFE2137A15C00A35DCD /* Assets.xcassets */,
 				DCA69B032137A15C00A35DCD /* Info.plist */,
 			);
@@ -192,11 +226,9 @@
 		DC884E692137AE4C00D25CDE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DC884E6A2137C6DA00D25CDE /* HistoryViewController.swift */,
-				DCD32C282137FEAF00BDA200 /* HistoryDetailViewController.swift */,
+				BF544B652168759A00AA6296 /* History */,
+				BF544B66216875A600AA6296 /* Setting */,
 				DC6310ED2139500F0062BCFA /* MainTabBarViewController.swift */,
-				DC92DBD0213E6F7B001E9019 /* AboutViewController.swift */,
-				DCAF6134213E755B00564C04 /* SettingViewController.swift */,
 				DC321915213F7A3F00C70DEE /* PhotoViewController.swift */,
 			);
 			path = Controller;
@@ -450,7 +482,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Release\" ]; then\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\")\nprefix=${buildNumber:0:1}\nbuildNumber=${buildNumber:1}\nnewSubBuild=`echo $buildNumber | awk -F \".\" '{print $2}'`\nnewSubBuild=$(($newSubBuild + 1))\nnewSubBuildString=`echo $buildNumber | awk -F \".\" '{print $1 \".'$newSubBuild'\" }'`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $prefix$newSubBuildString\" \"$INFOPLIST_FILE\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $prefix$newSubBuildString\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\nfi";
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Release\" ]; then\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\")\nprefix=${buildNumber:0:1}\nbuildNumber=${buildNumber:1}\nnewSubBuild=`echo $buildNumber | awk -F \".\" '{print $2}'`\nnewSubBuild=$(($newSubBuild + 1))\nnewSubBuildString=`echo $buildNumber | awk -F \".\" '{print $1 \".'$newSubBuild'\" }'`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $prefix$newSubBuildString\" \"$INFOPLIST_FILE\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $prefix$newSubBuildString\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\nfi\n";
 		};
 		DCD32C262137F91900BDA200 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -463,7 +495,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" d680067b50aa01ab400c1022c5d0e30bfffdc45b 927a3bc154d0e69388c09a0a30e659f860530cbef4947e8a22cf4ffddc0ccfb1";
+			shellScript = "./Fabric.framework/run d680067b50aa01ab400c1022c5d0e30bfffdc45b 927a3bc154d0e69388c09a0a30e659f860530cbef4947e8a22cf4ffddc0ccfb1\n";
 		};
 		F3A800E6D0A1BC914EA0128A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

@@ -18,7 +18,10 @@ struct AppSetting {
     
     var isSoundOn: Bool {
         get {
-            return UserDefaults.standard.bool(forKey: Constant.isSoundOn)
+            if let sound = UserDefaults.standard.value(forKey: Constant.isSoundOn) {
+                return sound as! Bool
+            }
+            return true
         }
     }
 }
