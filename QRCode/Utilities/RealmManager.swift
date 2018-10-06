@@ -26,4 +26,16 @@ struct RealmManager {
         Realm.Configuration.defaultConfiguration = config
         self.realm = try! Realm()
     }
+    
+    static func add(object: Object) {
+        try? realm.write {
+            realm.add(object)
+        }
+    }
+    
+    static func update(block: (() -> Void)?) {
+        try? realm.write {
+            block?()
+        }
+    }
 }

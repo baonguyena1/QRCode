@@ -34,6 +34,7 @@ class History: Object {
     @objc dynamic var createdDate: Date = Date()
     
     static func object(with content: String) -> History? {
-        return RealmManager.realm.objects(History.self).filter("content == \(content)").first
+        let filter = NSPredicate(format: "content = %@", content)
+        return RealmManager.realm.objects(History.self).filter(filter).first
     }
 }

@@ -75,10 +75,14 @@ extension MainTabBarViewController {
     }
     
     fileprivate func createResult(_ content: String) {
-        let history = History()
-        history.content = content
-        try? RealmManager.realm.write {
-            RealmManager.realm.add(history)
+        if let history = History.object(with: content) {
+            RealmManager.update {
+                history.createdDate = Date()
+            }
+        } else {
+            let history = History()
+            history.content = content
+            RealmManager.add(object: history)
         }
     }
     
